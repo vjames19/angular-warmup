@@ -24,13 +24,8 @@
   <!-- Bootstrap your angular application with ng-app -->
   <body ng-app="angularWarmupApp">
 
-    <div class="container-fluid">
-      <div class="row" ng-init="friends = [
-      {name: 'Victor', lastName: 'Rodriguez', phone: '555-123-9999'},
-      {name: 'Miguel', lastName: 'Doe', phone: '555-456-9999'},
-      {name: 'Jose', lastName: 'Martinez', phone: '555-789-9999'},
-      {name: 'Rosa', lastName: 'Merleño', phone: '555-000-9999'}
-      ]">
+    <div class="container-fluid" ng-controller="FriendsController">
+      <div class="row">
       <div class="col-xs-6 col-xs-offset-3">
         <h1>Friends list</h1>
         <div class="row">
@@ -95,6 +90,7 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/filters/reverse.js"></script>
+    <script src="scripts/controllers/friends.js"></script>
     <!-- endbuild -->
   </body>
 </html>
