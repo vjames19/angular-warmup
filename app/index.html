@@ -24,9 +24,35 @@
   <!-- Bootstrap your angular application with ng-app -->
   <body ng-app>
 
-    <h1>My first angular data binding</h1>
-    <label for="name">Enter your name </label>
-    <input type="text" name="name" ng-model="name">Hello {{ name }}!
+    <div class="container-fluid">
+      <div class="row" ng-init="friends = [
+      {name: 'Victor', lastName: 'Rodriguez', phone: '555-123-9999'},
+      {name: 'Miguel', lastName: 'Doe', phone: '555-456-9999'},
+      {name: 'Jose', lastName: 'Martinez', phone: '555-789-9999'},
+      {name: 'Rosa', lastName: 'Merleño', phone: '555-000-9999'}
+      ]">
+      <div class="col-xs-6 col-xs-offset-3">
+        <h1>Friends list</h1>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Last Name</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="friend in friends">
+              <td>{{ friend.name }}</td>
+              <td>{{ friend.lastName }}</td>
+              <td>{{ friend.phone }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
 
     <!-- Don't delete this is part of the grunt plugins to automatically inject dependencies -->
     <!-- build:js scripts/vendor.js -->
