@@ -21,17 +21,25 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body>
+  <!-- Bootstrap your angular application with ng-app -->
+  <body ng-app>
 
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Angular will take care of this page soon!</h1>
-      </div>
-    </div>
+    <h1>My first angular data binding</h1>
+    <label for="name">Enter your name </label>
+    <input type="text" name="name" ng-model="name">Hello {{ name }}!
 
     <!-- Don't delete this is part of the grunt plugins to automatically inject dependencies -->
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
