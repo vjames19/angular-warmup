@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('angularWarmupApp', ['ngRoute']);
+var app = angular.module('angularWarmupApp', ['ngRoute', 'ui.bootstrap']);
 
 app.config(function($routeProvider){
   $routeProvider.when('/', {
