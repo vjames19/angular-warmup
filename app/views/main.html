@@ -27,7 +27,7 @@
           <th>Last Name</th>
           <th>Phone</th>
           <th>Awesomeness Rating</th>
-          <th>Delete Friend</th>
+          <th>Block Friend</th>
         </tr>
       </thead>
       <tbody>
@@ -39,7 +39,7 @@
             <do-rating max="5" rating-value="friend.rating" on-rating-selected="ratingSelected(rating)">
           </do-rating>
         </td>
-        <td><button ng-click="removeFriend($index)" class="btn btn-danger">Remove</button></td>
+        <td><button ng-click="blockFriend($index)" class="btn btn-danger">Block</button></td>
       </tr>
     </tbody>
   </table>

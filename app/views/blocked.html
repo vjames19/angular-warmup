@@ -1,1 +1,32 @@
-<div class="jumbotron">Your blocked friends will be here</div>
+<div class="row well">
+  <div class="col-xs-12">
+    <h1>Blocked Friends</h1>
+    <div ng-show="blocked.length == 0">
+    <p >Apparently you don't have a friend like:</p>
+    <img src="https://d2nh4f9cbhlobh.cloudfront.net/_uploads/galleries/35708/american_psycho1.jpg" alt="American psycho picture" class="img-responsive">
+    </div>
+
+    <table class="table table-striped" ng-hide="blocked.length == 0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Last Name</th>
+          <th>Phone</th>
+          <th>Awesomeness Rating</th>
+          <th>Unblock Friend</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="friend in blocked">
+          <td>{{ friend.name }}</td>
+          <td>{{ friend.lastName }}</td>
+          <td>{{ friend.phone }}</td>
+          <td>
+            <do-rating max="5" rating-value="friend.rating"></do-rating>
+        </td>
+        <td><button ng-click="unblock($index)" class="btn btn-danger">Unblock</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

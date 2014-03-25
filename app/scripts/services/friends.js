@@ -9,6 +9,8 @@ angular.module('angularWarmupApp').service('friends', function($timeout) {
     {name: 'Rosa', lastName: 'Merleño', phone: '555-000-9999', rating: 0},
   ];
 
+  var blocked = [];
+
   // Simulate a server call with a delay of 100 ms
   this.getFriends = function() {
     // Returns a promise of the value
@@ -21,7 +23,19 @@ angular.module('angularWarmupApp').service('friends', function($timeout) {
     friends.push(friend);
   };
 
-  this.removeFriend = function(index) {
+  this.getBlocked = function() {
+    return $timeout(function() {
+      return blocked;
+    }, 100);
+  };
+
+  this.blockFriend = function(index) {
+    blocked.push(friends[index]);
     friends.splice(index, 1);
+  };
+
+  this.unblockFriend = function(index) {
+    friends.push(blocked[index]);
+    blocked.splice(index, 1);
   };
 });

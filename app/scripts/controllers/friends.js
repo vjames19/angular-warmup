@@ -13,8 +13,8 @@ angular.module('angularWarmupApp').controller('FriendsController', function($sco
     friends.addFriend($scope.tempFriend);
   };
 
-  $scope.removeFriend = function(index) {
-    friends.removeFriend(index);
+  $scope.blockFriend = function(index) {
+    friends.blockFriend(index);
   };
 
   $scope.ratingSelected = function(rating) {

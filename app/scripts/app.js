@@ -9,5 +9,6 @@ app.config(function($routeProvider){
   })
   .when('/blocked', {
     templateUrl: 'views/blocked.html',
+    controller: 'BlockedController'
   });
 });
