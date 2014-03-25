@@ -30,6 +30,8 @@ angular.module('angularWarmupApp')
     var modalInstance = $modal.open({
       templateUrl: 'views/addFriendModal.html',
       controller: function($scope, $modalInstance) {
+        $scope.phonePattern = /^([0-9]{10})$/;
+
         $scope.tempFriend = {};
 
         $scope.addFriend = function() {
