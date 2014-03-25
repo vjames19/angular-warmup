@@ -17,4 +17,8 @@ angular.module('angularWarmupApp').controller('FriendsController', function($sco
     $scope.tempFriend.lastName = null;
     $scope.tempFriend.phone = null;
   };
+
+  $scope.removeFriend = function(index) {
+    $scope.friends.splice(index, 1);
+  };
 });
