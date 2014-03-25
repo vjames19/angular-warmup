@@ -7,4 +7,14 @@ angular.module('angularWarmupApp').controller('FriendsController', function($sco
     {name: 'Jose', lastName: 'Martinez', phone: '555-789-9999'},
     {name: 'Rosa', lastName: 'Merleño', phone: '555-000-9999'}
   ];
+
+  $scope.tempFriend = {};
+
+  $scope.addFriend = function() {
+    $scope.friends.push(angular.copy($scope.tempFriend));
+
+    $scope.tempFriend.name = null;
+    $scope.tempFriend.lastName = null;
+    $scope.tempFriend.phone = null;
+  };
 });

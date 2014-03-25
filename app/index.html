@@ -26,50 +26,70 @@
 
     <div class="container-fluid" ng-controller="FriendsController">
       <div class="row">
-      <div class="col-xs-6 col-xs-offset-3">
-        <h1>Friends list</h1>
-        <div class="row">
-          <div class="col-xs-12">
-            <form ng-submit="" role="form" class="form-inline">
-              <div class="form-group">
-                <label for="filter">Search</label>
-                <input type="text" name="filter" ng-model="searchText.$" placeholder="By Any property">
-              </div>
-              <div class="form-group">
-                <input type="text" ng-model="searchText.name" placeholder="By Name">
-              </div>
-              <div class="form-group">
-                <input type="text" ng-model="searchText.lastName" placeholder="By Last Name">
-              </div>
-              <div class="form-group">
-                <input type="text" ng-model="searchText.phone" placeholder="By Phone">
-              </div>
-            </form>
+        <div class="col-xs-6 col-xs-offset-3">
+          <h1>Friends list</h1>
+          <div class="row">
+            <div class="col-xs-12">
+              <form ng-submit="" role="form" class="form-inline">
+                <div class="form-group">
+                  <label for="filter">Search</label>
+                  <input type="text" name="filter" ng-model="searchText.$" placeholder="By Any property">
+                </div>
+                <div class="form-group">
+                  <input type="text" ng-model="searchText.name" placeholder="By Name">
+                </div>
+                <div class="form-group">
+                  <input type="text" ng-model="searchText.lastName" placeholder="By Last Name">
+                </div>
+                <div class="form-group">
+                  <input type="text" ng-model="searchText.phone" placeholder="By Phone">
+                </div>
+              </form>
+            </div>
           </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Name reversed</th>
+                <th>Name reversed and uppercased</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="friend in friends | filter:searchText">
+                <td>{{ friend.name }}</td>
+                <td>{{ friend.lastName }}</td>
+                <td>{{ friend.phone }}</td>
+                <td>{{ friend.name | reverse }}</td>
+                <td>{{ friend.name | reverse:'true'}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Last Name</th>
-              <th>Phone</th>
-              <th>Name reversed</th>
-              <th>Name reversed and uppercased</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="friend in friends | filter:searchText">
-              <td>{{ friend.name }}</td>
-              <td>{{ friend.lastName }}</td>
-              <td>{{ friend.phone }}</td>
-              <td>{{ friend.name | reverse }}</td>
-              <td>{{ friend.name | reverse:'true'}}</td>
-            </tr>
-          </tbody>
-        </table>
+      </div>
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3 well">
+          <h2>Add a friend to your list!</h2>
+          <form ng-submit="addFriend()" class="form-horizontal">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" name="name" ng-model="tempFriend.name" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" name="lastName" ng-model="tempFriend.lastName" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="text" class="form-control" name="phone" ng-model="tempFriend.phone" placeholder="Phone">
+            </div>
+            <button type="submit" class="btn btn-lg btn-block btn-info">Add</button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
 
     <!-- Don't delete this is part of the grunt plugins to automatically inject dependencies -->
